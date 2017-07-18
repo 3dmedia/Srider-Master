@@ -1,0 +1,41 @@
+<?php
+
+/* 
+ * @category   Booking Software
+ * @package    Srider Module
+ * @author     Brinzaru Andrei-Dan <dan.brinzaru@gmail.com>
+ * @copyright  Copyright (c) 2016 - Technicopro, Brinzaru Andrei-Dan
+ * @version    1.0
+ */
+
+    $title = $this->translate('Srider - Index');
+    $this->headTitle($title);
+    
+    $this->headLink()
+                    ->prependStylesheet($this->basePath('css/index/index.css')) 
+                    ->prependStylesheet($this->basePath('plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css'));
+    $this->headScript()->appendFile('/plugins/moment/min/moment-with-locales.min.js');
+    $this->headScript()->appendFile('plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js');
+    $this->headScript()->appendFile('/js/index/indexr.js');
+?> 
+
+<!--<a href="<?php echo $this->url('home')."cn";?>"><?php echo $this->translate("Chinese");?></a>-->
+<!--<a href="<?php echo $this->url('home')."en";?>"><?php echo $this->translate("English");?></a>-->
+<h1 class="page-header">
+    <?php echo $this->translate('Home') ?>
+</h1>
+
+<div class="col-sm-12 col-md-12 jumbotron"> 
+    <div class="row">
+        <div class="col-md-12">
+            <?=$this->translate('Content text');?>
+        </div>
+        <div class="col-md-12">
+            <ul class="nav navbar-nav text-center">
+                <li class=""><a href="<?php echo $this->url('signup') ?>"><?php echo $this->translate('Sign up') ?></a></li>
+                <li class=""><a href="<?php echo $this->url('srider') ?>"><?php echo $this->translate('Start riding') ?></a></li>
+            </ul>
+        </div> 
+    </div> 
+</div>
+ 

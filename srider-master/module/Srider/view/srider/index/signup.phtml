@@ -1,0 +1,38 @@
+<?php
+
+/* 
+ * @category   Booking Software
+ * @package    Srider Module
+ * @author     Brinzaru Andrei-Dan <dan.brinzaru@gmail.com>
+ * @copyright  Copyright (c) 2016 - Technicopro, Brinzaru Andrei-Dan
+ * @version    1.0
+ */
+
+    $title = $this->translate('Srider - Signup');
+    $this->headTitle($title);
+    
+    $this->headLink()
+                    ->prependStylesheet($this->basePath('css/index/signup.css')); 
+    $this->headScript()->appendFile('/js/index/signup.js');
+    
+
+?> 
+<h1 class="page-header">
+    <?php echo $this->translate('Sign up') ?>
+</h1>
+
+<div class="col-sm-12 col-md-12 jumbotron"> 
+    <div class="row">
+        <div class="col-md-12">
+            <?=$this->translate('Content text');?>
+        </div>
+        <div class="col-md-12">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="<?php echo $this->url('signup') ?>"><?php echo $this->translate('Driver sign up') ?></a></li>
+                <li class=""><a href="<?php echo $this->url('signup') ?>"><?php echo $this->translate('Rider sign up') ?></a></li>
+                <li class=""><a href="<?php echo $this->url('signup') ?>"><?php echo $this->translate('Agency sign up') ?></a></li>
+            </ul>
+        </div> 
+    </div> 
+</div>
+ 

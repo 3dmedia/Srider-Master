@@ -1,0 +1,40 @@
+<!--<div class="navbar-left">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-left" aria-expanded="false" aria-controls="navbar-left">
+        <span class="sr-only"><?php //echo $this->translate('Toggle navigation') ?></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="<?php //echo $this->url('home') ?>"><?php //echo $this->translate('VetMed') ?></a>
+</div>-->
+<div id="navbar-left" class="navbar-collapse collapse no-padding">
+    <ul class="nav nav-sidebar main-menu">
+        <?php foreach ($this->container as $page):
+            /** @var Zend\Navigation\Page\AbstractPage $page */ ?>
+            <li class="<?php echo $page->hasPages() ? 'dropdown' : '' ?> <?php if($page->isActive()) echo 'active'?>">
+                <a href="<?php echo $page->getHref() ?>" 
+                    target="<?php echo $page->getTarget() ?>"
+                    class="<?php echo $page->hasPages() ? ' dropdown-toggle centered ' : ' centered ' ?><?php if($page->isActive()) echo ' active '?>"
+                          <?php echo $page->hasPages() ? ' data-toggle="dropdown" ' : '' ?>
+                          >
+                    <?php echo $page->getLabel() ?>
+                    <?php if ($page->hasPages()): ?>
+                        <span class="caret"></span>
+                    <?php endif; ?>
+                </a>
+                <?php if ($page->hasPages()): ?>
+                    <ul class="dropdown-menu">
+                        <?php foreach ($page->getPages() as $child):
+                            /** @var Zend\Navigation\Page\AbstractPage $child */ ?>
+                            <li>
+                                <a href="<?php echo $child->getHref() ?>">
+                                    <?php echo $child->getLabel() ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

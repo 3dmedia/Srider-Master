@@ -1,0 +1,22 @@
+<?php 
+    if($this->users){
+        foreach($this->users as $user){ ?>
+            <li class="result col-sm-12" title="<?=ucfirst($user['first_name'])?>'s <?=$this->translate('phone number');?>: <?=$user['telephone']?>">
+                <div class="col-sm-3 avatar no-margins no-padding vcenter">
+                        <img src="<?=$this->basePath('img/users/'.$user['picture'])?>" class="img-rounded vcenter" alt="avatar" />
+                </div>
+                <h3 class="col-sm-3 no-margins no-padding vcenter ex-first_name"><?=ucfirst($user['first_name'])?></h3> 
+                <h3 class="col-sm-3 no-margins no-padding vcenter ex-last_name"><?=ucfirst($user['last_name'])?></h3> 
+                <h3 class="col-sm-3 no-margins no-padding vcenter ex-email"><?=$user['email']?></h4> 
+                <h4 class="hidden ex-phone"><?=$user['telephone']?></h4> 
+                <h4 class="hidden ex-address"><?=$user['address']?></h4> 
+                <h5 class="hidden ex-uid"><?=$user['id']?></h5>
+            </li>
+<?php 
+        } 
+    }else{
+?>
+            <div class="not-found warning"><?=$this->translate('No user found.');?></div>
+<?php 
+    } 
+?>

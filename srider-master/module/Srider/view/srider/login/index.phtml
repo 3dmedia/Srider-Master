@@ -1,0 +1,75 @@
+<?php //echo $this->partial('flashMessenger'); ?>
+<div id="contentContainer" class="container">
+    <div class="row">
+        <div id="realContent" class="col-xs-12">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                  <!--<h1>Srider Authentication</h1>-->
+                </div>
+            </div>
+            <div class="row">
+                <section class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0" style="padding-top: 10%;">
+                    <div class="well well-lg">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12"><h3>Social Sign In</h3></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12"><p>Let's be honest, you need another account like a hole in the head! :D</p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <ul id="social-sign-in" class="inline-block list-unstyled">
+                                            <li class="col-xs-3"><a target="_blank" href="#google" title="Sign in with Google" rel="nofollow"><i class="fa fa-google-plus fa-3x"></i></a></li>
+                                            <li class="col-xs-3"><a target="_blank" href="#twitter" title="Sign in with Twitter" rel="nofollow"><i class="fa fa-twitter fa-3x"></i></a></li>
+                                            <li class="col-xs-3"><a target="_blank" href="#facebook" title="Sign in with Facebook" rel="nofollow"><i class="fa fa-facebook-official fa-3x"></i></a></li>
+                                            <li class="col-xs-3"><a target="_blank" href="#linkedin" title="Sign in with LinkedIn" rel="nofollow"><i class="fa fa-linkedin fa-3x"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12"><h3>Login</h3></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <?php 
+                                            $form = $this->loginForm;
+                                            $form->prepare();
+                                            echo $this->form()->openTag($form);
+                                        ?>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-envelope fa-2x"></i></span>
+                                            <?=$this->formElement($form->get('email')); ?>
+                                        </div>
+                                        <span class="common-error-msg"><?=$this->formElementErrors($form->get('email'));?></span> 
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-key fa-2x"></i></span>
+                                            <?=$this->formElement($form->get('password')); ?>
+                                        </div>
+                                        <span class="common-error-msg"><?=$this->formElementErrors($form->get('password'));?></span>
+
+                                        <div class="form-group">
+                                            <?=$this->formRow($form->get('loginCsrf'));?>
+                                            <?=$this->formElement($form->get('submit'));?>
+                                        </div>
+                                        <?=$this->form()->closeTag($form);?>
+                                        <div class="form-group">
+                                            <div class="topCushion">Not a member yet? <a href="#register">Register</a></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>By using this software, you agree to the <a href="#terms-of-service" target="_blank">Terms of Service</a> and the <a href="#privacy" target="_blank">Privacy Policy</a>.</p>
+                                        </div>
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </section>
+            </div> 
+        </div>
+    </div>  
+</div>
